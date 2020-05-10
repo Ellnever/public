@@ -198,7 +198,7 @@ install_v2ray(){
 	check_pip
 	bash <(curl -sL $v2ray_url) --zh
 	find /usr/local/lib/python*/*-packages/v2ray_util -name group.py > v2raypath
-	sed -i 's#ps": ".*"#ps": "胖波比"#g' $(cat v2raypath)
+	sed -i 's#ps": ".*"#ps": "Cindy"#g' $(cat v2raypath)
 	
 	protocol=$(jq -r ".inbounds[0].streamSettings.network" /etc/v2ray/config.json)
 	cat /etc/v2ray/config.json |jq "del(.inbounds[0].streamSettings.${protocol}Settings[])" |jq '.inbounds[0].streamSettings.network="ws"' > /root/temp.json
